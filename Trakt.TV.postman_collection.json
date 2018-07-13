@@ -1,0 +1,528 @@
+{
+	"info": {
+		"_postman_id": "b5669092-65b0-467b-89f8-a95d279fced0",
+		"name": "Trakt.TV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getMovies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "trakt-api-key",
+						"value": "019a13b1881ae971f91295efc7fdecfa48b32c2a69fe6dd03180ff59289452b8"
+					},
+					{
+						"key": "trakt-api-version",
+						"value": "2"
+					},
+					{
+						"key": "Authorization",
+						"value": "ec983e51e18868e0c95fb8cb2692c0845345b9d23dd103ca7961d131bf8c0ca3"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://api.trakt.tv/movies/popular",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trakt",
+						"tv"
+					],
+					"path": [
+						"movies",
+						"popular"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.trakt.tv/oauth/device/code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"client_id\": \"019a13b1881ae971f91295efc7fdecfa48b32c2a69fe6dd03180ff59289452b8\"\n}"
+				},
+				"url": {
+					"raw": "https://api.trakt.tv/oauth/device/code",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trakt",
+						"tv"
+					],
+					"path": [
+						"oauth",
+						"device",
+						"code"
+					]
+				},
+				"description": "Activation Code Privalia - Step 1"
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.trakt.tv/oauth/device/token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"code\": \"9d10f741d080575a32b855f33b868e793a9da29a878d5ac8f359c337b60cd8d5\",\n  \"client_id\": \"019a13b1881ae971f91295efc7fdecfa48b32c2a69fe6dd03180ff59289452b8\",\n  \"client_secret\": \"f34550e2f619fe7f1fc81f6fc7acc3f76e5c176413df200f820d6f6de7506e3f\"\n}"
+				},
+				"url": {
+					"raw": "https://api.trakt.tv/oauth/device/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trakt",
+						"tv"
+					],
+					"path": [
+						"oauth",
+						"device",
+						"token"
+					]
+				},
+				"description": "Token access for application - Privalia"
+			},
+			"response": [
+				{
+					"id": "261f140d-43f9-4675-93d8-ef69c5966956",
+					"name": "https://api.trakt.tv/oauth/device/token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"9d10f741d080575a32b855f33b868e793a9da29a878d5ac8f359c337b60cd8d5\",\n  \"client_id\": \"019a13b1881ae971f91295efc7fdecfa48b32c2a69fe6dd03180ff59289452b8\",\n  \"client_secret\": \"f34550e2f619fe7f1fc81f6fc7acc3f76e5c176413df200f820d6f6de7506e3f\"\n}"
+						},
+						"url": {
+							"raw": "https://api.trakt.tv/oauth/device/token",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trakt",
+								"tv"
+							],
+							"path": [
+								"oauth",
+								"device",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "CF-RAY",
+							"value": "42b6f1b2192b4ca2-GRU",
+							"name": "CF-RAY",
+							"description": "Custom header"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Cf-Railgun",
+							"value": "fe4cfc9ce1 99.99 0.126050 0030 57da",
+							"name": "Cf-Railgun",
+							"description": "Custom header"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip",
+							"name": "Content-Encoding",
+							"description": "The type of encoding used on the data."
+						},
+						{
+							"key": "Content-Length",
+							"value": "203",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Jun 2018 18:01:49 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"9bd095d3b30324f53645fbfbbef1f539\"",
+							"name": "Etag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+							"name": "Expect-CT",
+							"description": "Custom header"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding",
+							"name": "Vary",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "20c72f56-8420-4b75-aaea-5c60d0bd43cb",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.083491",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "1; mode=block",
+							"name": "X-Xss-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Sat Jun 08 2019 09:58:39 GMT-0300 (-03)",
+							"httpOnly": true,
+							"domain": "trakt.tv",
+							"path": "/",
+							"secure": false,
+							"value": "d72ff7eee02b47bc2825499400b0025751528462719",
+							"key": "__cfduid"
+						},
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (-03)",
+							"httpOnly": true,
+							"domain": "trakt.tv",
+							"path": "/",
+							"secure": false,
+							"value": "ODRaSDMyY3VoTXFwZU9UMVVSNTlpY29IM0hYSWkyaWczSWlRUVVJbVNTakovRjNGbXRUQWM2aFU3cWdOeXZuakRDRzl1ZGNySDd5NUk2MVg4cE1sbjV1dDZxeGV2WlArMlFNL1dNYjRUMkN2enRiOHo4MElwWWU2dWpoaWRNYXlxVVpXci8wR1ZpTUNTUEFsUHR0L011ekxqOTRETW1kSEEyd0lBanQzajlyMENHL0FXZ1piK3VROC9OZGw5SVBxVlgrRmlHRTB0WkUxY054bDlFelAwd0duNUFyR1l0NjVtY3dYUzk3UGh5VXRNUVcwNys0WExvc0c3N2FCSUhrQTRETllqb3VyKzBPeHovZHRMNllqMzFLMWJlMjFZZ0RWV0FCRUgzSFEzUCtBSHRMSTRPdlVucTVOWWpmTGNoSklLYnpiby9ZcnQ0WlBoZ2VOczlRd1UzTnBVUnNDNkhOV1RYQkFkVDdNOTR6ZzRvbW1HdCtHZ0RCV0FNVjlBNHVrb1hSM3FNd0REM2xpaUhJWFdQZXE1ZzhYeUhFWFovRG0xdURRQTZtb3cxVk1DOVNvY0xaY0VtL2tIeXljbk5ySzdLaGQxRDVTKzZXRW1Ta0VQZUR6V0tqeCtjMnBsMXU1clhjdzhWNzdDUUJ3dTV2ZXFBenovM0Y1WTJtR0dndEZIRU1talBqT1RHWWJ4SVBCMW54WkdjdlAzcjZIcUgvbjJNRmxXTDM4QmhLR1pDVlk2d3lHbEZwM2RkQmNhODcxQkNUWTVsM2M3bTlXTktpTUxML3F0YjVRQUNySG01TDFWMUQxUGVid1U1K3B5Y0lSRVY5VXNJT2NWNWpqL0ZPRXFaVXpOVm15eG5nSTBENTJvYVFSNjJKSXAya3hiZkZFbDdKODdSRmZoZm9BNGtsNTVNdFhPbk1BQ3dETGFJaGgtLU5GY3JJdDdpQXJkaXJMTlFxS2h0K3c9PQ%3D%3D--cd6be9ba9068582cc9676f34d4a22ff048481ac4",
+							"key": "_traktsession"
+						},
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (-03)",
+							"httpOnly": true,
+							"domain": "api.trakt.tv",
+							"path": "/",
+							"secure": false,
+							"value": "Y05FL01COTZiU3J5eUl6S252VlkxU3Bac2NMSWFrNHJqWHNBWXpZY3VFdDUveWtqS1ZnL0pXVkFxckZVbWNiblpZS0EySXB5RkdjMldPQk9tMEFnNUZkN1RLd2QwbW16QmdKNVNTbnBheHkzY0hNSGNzSE1RUDFKZzVMclE5MmVoaTAzZkJ2M1FPUjgxV1VMOHdIcm5hQzlpU1NyUUhqSUVtNzdTa0VIL3JTVmFIaFl0aE5ZK1RaV0lOSnFxam5QRzFSSkJGcVR6d2lJQUwzQ2k5NkNwSkJnMmQ0OEVtR2xpWGtLOUg3RFVHcTNhVVMzUFpYVWxkU2NIL3JlSDNjYjFUbTJIMmxjS1gxQk95RjlWS3NrMHZSbjVZWkhiMEY4SVVJZ1lyUkVOU3RhNXNwbWVYQk1zSWxKc0hwaVJGaG1PYUx0RXdvSmN2Zk5HUkZ2S3FNL0YxT1l5ZG4rVWlQdVpwWkJtMEVUTmdoWjZsWlNhcENMdHk1Vm1RbThjdHBHUzBRWTd4TVFFb0laUVZMK0lxSHJBUCszYkNuSkVlc0gzMHlsdnc2aTBoVkVJbnB1ajM5NXN6a3ZHWGVZZi9QKzl4ZDRhV3dZemtOdTlyL0NVZkRaRE9iSHd5YWNaUHZ6a095UUpYdERsQjRja0RUNVc5TmM4R0ZLazZiUi9DR2pkV0N4UWREcEtRcnpFM3cyRWdaVGpIak1zNlQrWVJubENFcjY1U1ZuSW4zSUVXelFFUURrY2NIeXB3c0tzNytaQmk5R1grdUlUZGlFUUNvV0dUdUQwSGs5NUd4ZitDLytIdmVCWHRTMFVqRDlrTmNhMEljWXk3eXdma0hZY003bmpsMmlIcGRCSzNCNGF1NUoxRFpZS0RJTzIrSnRpRk13czNrWnNpT3diYWFFY1B4aGxOb3pjRmlISTFNN1JIV1J0MGEzMnBteDE0OG5LU0lmSHM5aU5BPT0tLVowREpScThWY0RvRU9DT0xWNDk2NUE9PQ%3D%3D--b5fd156b1f5fe182b9d20dd5e21b477f2e4a6921",
+							"key": "_traktsession"
+						}
+					],
+					"body": "{\"access_token\":\"4131eed08a1a1efedad9a42322072b2115fdffaa4e014cbaa8a02f76710f3dfb\",\"token_type\":\"bearer\",\"expires_in\":7776000,\"refresh_token\":\"f33b0fe23778b5247a7379b61ecc10b722ec107e8e1e92223f6693344a05d13a\",\"scope\":\"public\",\"created_at\":1529085699}"
+				}
+			]
+		},
+		{
+			"name": "https://api.trakt.tv/oauth/revoke",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "ec983e51e18868e0c95fb8cb2692c0845345b9d23dd103ca7961d131bf8c0ca3"
+					},
+					{
+						"key": "trakt-api-version",
+						"value": "2"
+					},
+					{
+						"key": "trakt-api-key",
+						"value": "019a13b1881ae971f91295efc7fdecfa48b32c2a69fe6dd03180ff59289452b8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "token = ec983e51e18868e0c95fb8cb2692c0845345b9d23dd103ca7961d131bf8c0ca3"
+				},
+				"url": {
+					"raw": "https://api.trakt.tv/oauth/revoke",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trakt",
+						"tv"
+					],
+					"path": [
+						"oauth",
+						"revoke"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchMovies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "trakt-api-key",
+						"value": "019a13b1881ae971f91295efc7fdecfa48b32c2a69fe6dd03180ff59289452b8"
+					},
+					{
+						"key": "trakt-api-version",
+						"value": "2"
+					},
+					{
+						"key": "Authorization",
+						"value": "ec983e51e18868e0c95fb8cb2692c0845345b9d23dd103ca7961d131bf8c0ca3",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://api.trakt.tv/search/movie?query=tron",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trakt",
+						"tv"
+					],
+					"path": [
+						"search",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "tron"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchMoviesPagination",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "trakt-api-key",
+						"value": "019a13b1881ae971f91295efc7fdecfa48b32c2a69fe6dd03180ff59289452b8"
+					},
+					{
+						"key": "trakt-api-version",
+						"value": "2"
+					},
+					{
+						"key": "Authorization",
+						"value": "ec983e51e18868e0c95fb8cb2692c0845345b9d23dd103ca7961d131bf8c0ca3",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://api.trakt.tv/search/movie?query=tron&page=2&extended=full",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trakt",
+						"tv"
+					],
+					"path": [
+						"search",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "tron"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "extended",
+							"value": "full"
+						},
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": null,
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMoviesFullContent",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "trakt-api-key",
+						"value": "019a13b1881ae971f91295efc7fdecfa48b32c2a69fe6dd03180ff59289452b8"
+					},
+					{
+						"key": "trakt-api-version",
+						"value": "2"
+					},
+					{
+						"key": "Authorization",
+						"value": "ec983e51e18868e0c95fb8cb2692c0845345b9d23dd103ca7961d131bf8c0ca3"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://api.trakt.tv/movies/popular/?extended=full&page=2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trakt",
+						"tv"
+					],
+					"path": [
+						"movies",
+						"popular",
+						""
+					],
+					"query": [
+						{
+							"key": "extended",
+							"value": "full"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMoviesPagination",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "trakt-api-key",
+						"value": "019a13b1881ae971f91295efc7fdecfa48b32c2a69fe6dd03180ff59289452b8"
+					},
+					{
+						"key": "trakt-api-version",
+						"value": "2"
+					},
+					{
+						"key": "Authorization",
+						"value": "ec983e51e18868e0c95fb8cb2692c0845345b9d23dd103ca7961d131bf8c0ca3"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://api.trakt.tv/movies/popular/?page=2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trakt",
+						"tv"
+					],
+					"path": [
+						"movies",
+						"popular",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

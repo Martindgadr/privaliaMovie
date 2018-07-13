@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemMovieSearchCard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    card_view:cardBackgroundColor="@color/colorPrimary"
+    card_view:cardCornerRadius="@dimen/card_corner_radius"
+    card_view:cardElevation="@dimen/card_elevation">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:srcCompat="@drawable/ic_movie" />
+
+        <TextView
+            android:id="@+id/movieNameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorTextPrimary"
+            card_view:layout_constraintEnd_toStartOf="@+id/movieYearText"
+            card_view:layout_constraintStart_toEndOf="@+id/imageView"
+            card_view:layout_constraintTop_toTopOf="@+id/imageView"
+            tools:text="Movie Name" />
+
+        <TextView
+            android:id="@+id/movieYearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/colorTextPrimary"
+            card_view:layout_constraintBottom_toBottomOf="@+id/movieNameText"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="@+id/movieNameText"
+            tools:text="2018" />
+
+        <TextView
+            android:id="@+id/movieOverviewText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorTextPrimary"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="@+id/movieYearText"
+            card_view:layout_constraintStart_toStartOf="@+id/movieNameText"
+            card_view:layout_constraintTop_toBottomOf="@+id/movieNameText"
+            tools:text="Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat." />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
